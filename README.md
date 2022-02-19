@@ -1,7 +1,7 @@
 # CalcGPA
 This is the Semester GPA Calculator for the B.Tech(IT) of IPU!
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)]https://share.streamlit.io/choudhary-vaibhav/calcgpa/main/app.py)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/choudhary-vaibhav/calcgpa/main/app.py)
 
 
 Here's the criteria for marks to grade conversion.

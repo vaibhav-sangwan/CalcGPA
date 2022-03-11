@@ -1,6 +1,7 @@
 import streamlit as st
 
-st.set_page_config( page_title = "CalcGPA", page_icon = None)
+st.set_page_config( page_title = "CalcGPA", page_icon = None) 
+#for page title & favicon
 
 
 def grades(marks):
@@ -29,9 +30,9 @@ def calc(sem):
     subjects = {}
     labs = {}
     GPA = 0
-    flag = 0
+    flag = 0  #for the warning message when marks haven't entered
     credits = 0
-    col1, col2 = st.columns(2)
+    col1, col2 = st.columns(2)  #for columns: one for theory sub, and another for lab sub
 
     if sem == 1 :
         subjects = { 'App. Maths-I' : 4, 'App. Physics-I' : 3, 'Manufacturing Processes' : 3, 'Electrical Tech.' : 3, 'Human Values' : 1, 'Fundamentals of Computing' : 2, 'App. Chemistry' : 3 }
@@ -109,7 +110,7 @@ with st.container():
             st.write("")
             st.write("")
 
-            cl1, cl2, cl3, cl4, cl5, cl6, cl7, cl8, cl9 = st.columns(9)
+            cl1, cl2, cl3, cl4, cl5, cl6, cl7, cl8, cl9 = st.columns(9) #just for formatting XD
             with cl5:
                 ans = st.button("Submit")
                 

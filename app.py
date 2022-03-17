@@ -64,6 +64,16 @@ def calc(sem):
         labs = { 'Operating Systems Lab' : 1, 'Networks Lab' : 1, 'Web Engineering Lab' : 1, 'Microprocessor & Microcontroller Lab' : 1 }
         credits = 27
 
+    elif sem == 7:
+        subjects = { 'Information Security' : 4, 'Software testing and QA' : 3, 'Wireless Communication' : 3, elective1 : 3, elective2 : 3, }
+        labs = { 'Information Security Lab' : 1, 'Software testing and QA Lab' : 1, 'Wireless Communication Lab' : 1, 'Lab based on Elective 1 & 2' : 1, 'Summer Training/Industrial Workshop/Certification' : 1, 'Minor Project' : 3 }
+        credits = 24
+
+    elif sem == 8:
+        subjects = { 'Mobile Computing' : 4, 'Machine Learning' : 3 , 'Human Values & Professional Ethics-II' : 1, elective1 : 3, elective2 : 3 }
+        labs = { 'Mobile Computing Lab' : 1, 'Machine Learning Lab' : 1, 'Lab based on Elective 1' : 1, 'Lab based on elective 2' : 1, 'Major Project' : 8 }
+        credits = 26
+
     with col1:
         with st.expander("Theory Subjects"):
             for subject in subjects:
@@ -88,7 +98,7 @@ def calc(sem):
     GPA = GPA / credits
     return GPA
 
-    
+
 
 st.markdown("<h1 style='text-align: center; color: red;'>CalcGPA</h1>", unsafe_allow_html=True)
 st.markdown("<h3 style='text-align: center; '>Semester GPA Calculator of B.Tech(IT)</h3>", unsafe_allow_html=True)
@@ -98,7 +108,33 @@ with st.container():
 
     if name:
         st.write("Hello {}!".format(name))
-        sem = st.number_input("ENTER YOUR SEMESTER", 0, 6)
+        sem = st.number_input("ENTER YOUR SEMESTER", 0, 8)
+
+        if sem == 7 or sem == 8:
+            st.write("")
+            st.write("")
+            st.markdown("<h3 style='text-align: center; '>Select your Electives</h3>", unsafe_allow_html=True)
+            elective1List = []
+            elective2List = []
+            if sem == 7:
+                elective1List = ['Complexity Theory', 'Intellectual property Rights', 'Embedded Systems', 'Data Mining and business Intelligence', 'Advanced Computer Intelligence', 'Natural Language Processing']
+                elective2List = ['Digital Signal Processing', 'Simulation and Modelling', 'Advanced DBMS', 'Parallel Computing', 'Advanced Computer Networks', 'Control System', 'Sociology and  Elements of Indian History for Engineers']
+
+            elif sem == 8:
+                elective1List = ['Digital Image Processing', 'Microelectronics', 'Ad Hoc and Sensor Networks', 'Soft Computing', 'VLSI Design', 'Distributed Systems', 'Object Oriented Software Engineering', 'Computer Vision', 'Software Project Management']
+                elective2List = ['Human Computer Interaction', 'Information theory and Coding', 'Web Intelligence and Big Data', 'Service Oriented Architecture', 'Multiagent Systems', 'Principles of Programming Languages', 'Telecommunication Networks', 'Selected Topics of Recent Trends in  Computer Science and Engineering']
+
+            col3, col4 = st.columns(2)
+            with col3:
+                elective1 = st.selectbox(
+                    'Elective 1',
+                    (elective1List))
+
+            with col4:
+                elective2 = st.selectbox(
+                    'Elective 2',
+                    (elective2List))
+                
 
         if sem:
             st.write("")
